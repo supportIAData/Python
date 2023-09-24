@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>User information</h1>
+{% endblock %}
+
+{% block content %}
+<p>Name : {{ user['name'] }}</p>
+<article>
+    {{ user['bio'] }}
+</article>
+{% endblock %}
