@@ -18,13 +18,13 @@ def hello_world():
 
 ### Windows 
 
-Dans un terminale sur votre bureau et dans un dossier où vous souhaitez démarrer le projet
+Dans un terminal sur votre bureau et dans un dossier où vous souhaitez démarrer le projet
 
 ```bash
 python -m venv myapp
 ```
 
-Dans un powershell, toujours dans le dossier myapp
+Dans un PowerShell, toujours dans le dossier myapp
 
 ```bash
 .\mon_env\Scripts\Activate
@@ -47,19 +47,19 @@ Démarrer le serveur sur le port 5000 en localhost :
 flask run
 ```
 
-Puis, on installa Flask dans le dossier virtualisé, notez que les dépendances suivantes seront également installées :
+Puis, on installera Flask dans le dossier virtualisé, notez que les dépendances suivantes seront également installées :
 
-- **Werkzeug** implements WSGI, the standard Python interface between applications and servers.
+- Werkzeug: implémente WSGI, la norme Python standard entre les applications et les serveurs.
 
-- **Jinja** is a template language that renders the pages your application serves.
+- Jinja: est un langage de modèle qui rend les pages que votre application sert.
 
-- **MarkupSafe** comes with Jinja. It escapes untrusted input when rendering templates to avoid injection attacks.
+- MarkupSafe: est livré avec Jinja. Il échappe aux entrées non fiables lors du rendu des modèles pour éviter les attaques par injection.
 
-- **ItsDangerous** securely signs data to ensure its integrity. This is used to protect Flask’s session cookie.
+- ItsDangerous: signe de manière sécurisée les données pour garantir leur intégrité. Cela est utilisé pour protéger le cookie de session de Flask.
 
-- **Click** is a framework for writing command line applications. It provides the flask command and allows adding custom management commands.
+- Click: est un framework pour écrire des applications en ligne de commande. Il fournit la commande flask et permet d'ajouter des commandes de gestion personnalisées.
 
-- **Blinker** provides support for Signals.
+Blinker: fournit une prise en charge des signaux.
 
 ### Sous Mac ou Linux
 
@@ -75,9 +75,9 @@ flask run
 
 ## Désactivation de la virtualisation 
 
-Attention, pour chaque session de votre console vous devez lancer l'environement pour l'activer.
+Attention, pour chaque session de votre console, vous devez activer l'environnement.
 
-Pour désactiver et supprimer l'environement tapez la commande suivante :
+Pour désactiver et supprimer l'environnement, tapez la commande suivante :
 
 ```bash
 
@@ -100,9 +100,9 @@ deactivate
 
 ### Création d'un fichier de dépendance
 
-Afin de préciser les dépendances utilisées dans votre projet vous devez créer le fichier suivant, cela permettra de partager vos projets et de les migrer facilement sur un autre poste de travail.
+Afin de spécifier les dépendances utilisées dans votre projet, vous devez créer le fichier suivant. Cela permettra de partager vos projets et de les migrer facilement sur un autre poste de travail.
 
-Rentrez dans votre environement virtualisé
+Entrez dans votre environnement virtualisé
 
 ```bash
 
@@ -161,7 +161,7 @@ users = [
 
 ### 01 Exercice configuration
 
-Dans le dossier static créez le fichier bootstrap.min.css, puis dans le fichier app.py importez le module **render_template**. Créez les deux fichiers index.html et base.html :
+Dans le dossier static, créez le fichier bootstrap.min.css, puis dans le fichier app.py, importez le module render_template. Créez les deux fichiers index.html et base.html :
 
 - les templates 
 
@@ -223,7 +223,7 @@ def hello_world():
     return render_template('index.html', users=users)
 ```
 
-Pour la suite pensez à taper la commande suivante pour surveiller les changements dans les fichiers et être en mode dévelloppement.
+Pour la suite, pensez à taper la commande suivante pour surveiller les changements dans les fichiers et être en mode développement.
 
 ```bash
 flask run --reload --extra-files 'templates/*.html' --debug
@@ -270,5 +270,20 @@ Créez une page permettant d'ajouter un utilisateur à notre dictionnaire.
 
 Utilisez la fonction flash de Flask pour vérifier l'existence d'un utilisateur, faites la gestion des erreurs.
 
-Aidez de la documentation pour faire cela.
+Aidez-vous de la documentation pour faire cela.
+
+## 02 TP 
+
+**Par équipe de 2 personnes**.
+
+Développez maintenant une API REST en ré-installant Flask
+
+**Fonctionnalités**
+
+- GET /api/users: Obtenir la liste de tous les utilisateurs.
+- GET /api/user/<int:id>: Obtenir un utilisateur par ID.
+- POST /api/user: Ajouter un nouvel utilisateur.
+- PUT /api/user/<int:id>: Mettre à jour un utilisateur par ID.
+- DELETE /api/user/<int:id>: Supprimer un utilisateur par ID.
+
 
